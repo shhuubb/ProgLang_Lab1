@@ -25,7 +25,6 @@ arraylist* create_arraylist() {
 }
 
 void addStudent(arraylist *list, student *new_student) {
-    printf("\n%d\n", list->capacity);
     if (list->length == list->capacity) {
         arraylist_resize(list);
     }

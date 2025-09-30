@@ -5,6 +5,7 @@
 #include "App.h"
 
 #include <stdio.h>
+#include <string.h>
 
 #include "arraylist.h"
 
@@ -18,52 +19,37 @@ void print_menu() {
 }
 
 void start_program(){
-    char choice;
+    char choice[10];
     arraylist *list2 = create_arraylist();
     printf("\n=== Система учета оценок ===\n");
     print_menu();
     do {
         printf("Выберите действие: ");
-        scanf("%s", &choice);
+        scanf("%9s", choice);
 
-        switch (choice) {
-            case '0':
-                print_menu();
-                break;
-
-            case '1':
-                addStudent(list2, input_student());
-                break;
-
-            case '2':
-                char name[100];
-                char subject[100];
-                printf("Введите имя: ");
-                scanf("%99s", name);
-                printf("Введите предмет: ");
-                scanf("%99s", subject);
-                deleteStudent(list2, name, subject);
-                break;
-
-            case '3':
-                char sub[100];
-                printf("Введите предмет: ");
-                scanf("%99s", sub);
-                findStudentsBySubject(list2, sub);
-                break;
-
-            case '4':
-                printAllStudents(list2);
-                break;
-
-            case '5':
-                printf("Выход из программы...\n");
-                break;
-
-            default:
-                printf("Неверный выбор!\n");
-                break;
+        if (strcmp(choice, "0") == 0) {
+            print_menu();
+        } else if (strcmp(choice, "1") == 0) {
+            addStudent(list2, input_student());
+        } else if (strcmp(choice, "2") == 0) {
+            char name[100], subject[100];
+            printf("Введите имя: ");
+            scanf("%99s", name);
+            printf("Введите предмет: ");
+            scanf("%99s", subject);
+            deleteStudent(list2, name, subject);
+        } else if (strcmp(choice, "3") == 0) {
+            char sub[100];
+            printf("Введите предмет: ");
+            scanf("%99s", sub);
+            findStudentsBySubject(list2, sub);
+        } else if (strcmp(choice, "4") == 0) {
+            printAllStudents(list2);
+        } else if (strcmp(choice, "5") == 0) {
+            printf("Выход из программы...\n");
+        } else {
+            printf("Неверный выбор! Введите 0, 1, 2, 3, 4 или 5\n");
         }
-    } while (choice != 5);
+    } while (strcmp(choice, "5") != 0);
 
 }
