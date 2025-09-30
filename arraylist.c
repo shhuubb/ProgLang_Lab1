@@ -51,10 +51,10 @@ void deleteStudent(arraylist *list, char *name, char *subject) {
         return;
     }
 
-    free(list->data[deletingIndex]->name); // Освободить строки
+    free(list->data[deletingIndex]->name); 
     free(list->data[deletingIndex]->subject);
-    free(list->data[deletingIndex]); // Освободить student
-
+    free(list->data[deletingIndex]); 
+    
     for (int j = deletingIndex; j < list->length - 1; j++) {
         list->data[j] = list->data[j + 1];
     }
