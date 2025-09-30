@@ -13,7 +13,7 @@ delete the item by student’s and subject name,
 search by the subject (to display marks by this subject for all students).
 */
 struct  {
-
+    char *name;
 
 } Student;
 

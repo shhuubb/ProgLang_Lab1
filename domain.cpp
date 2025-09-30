@@ -4,4 +4,9 @@
 
 #include "domain.h"
 
-struct student
+typedef struct {
+ //information about the student (name), subject and mark.
+ char *name;
+ char *subject;
+ int mark;
+}  student;
