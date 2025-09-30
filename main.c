@@ -1,5 +1,10 @@
-#include <memory>
-#include <stdbool.h>
+
+
+#include <stdio.h>
+
+#include "domain.h"
+
+
 //25 7 array list
 /*
  *
@@ -12,10 +17,13 @@ add new item,
 delete the item by student’s and subject name,
 search by the subject (to display marks by this subject for all students).
 */
-struct  {
-    char *name;
 
-} Student;
 
-typedef int (*intFunc2)(void* a, void* b);
+    int main(void) {
+        student *s = input_student();
+        printf("%s\n", s->name);
+        printf("%s\n", s->);
+        printf("%f", s->mark);
+        return 0;
+    }
 

@@ -2,12 +2,16 @@
 // Created by sh_ub on 30.09.2025.
 //
 
-#ifndef LECTION1_DOMAIN_H
-#define LECTION1_DOMAIN_H
+#ifndef STUDENT_H
+#define STUDENT_H
 
+typedef struct {
+    //information about the student (name), subject and mark.
+    char *name;
+    char *subject;
+    double mark;
+}  student;
 
-class domain {
-};
-
-
-#endif //LECTION1_DOMAIN_H
+student* create_student(const char *name, const char *subject, double mark);
+student* input_student();
+#endif

@@ -3,6 +3,7 @@ project(Lection1)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Lection1 main.cpp
-        domain.cpp
-        domain.h)
+add_executable(Lection1 main.c
+        domain.c
+        domain.h
+        collection.c)
