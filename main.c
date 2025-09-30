@@ -2,7 +2,9 @@
 
 #include <stdio.h>
 
-#include "domain.h"
+#include "App.h"
+#include "arraylist.h"
+#include "student.h"
 
 
 //25 7 array list
@@ -20,10 +22,7 @@ search by the subject (to display marks by this subject for all students).
 
 
     int main(void) {
-        student *s = input_student();
-        printf("%s\n", s->name);
-        printf("%s\n", s->);
-        printf("%f", s->mark);
+        start_program();
         return 0;
     }
 
